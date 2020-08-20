@@ -1,0 +1,134 @@
+// You can find all animations in  the animation tab 
+    var scene = createSprite(200,200,800,400);
+    scene.setAnimation("sunshine_showers_1");
+    scene.velocityX=-2;
+    scene.scale=2;
+    scene.x=scene.width/2;
+    
+   
+    var arrow = createSprite(335,155,10,10);
+    arrow.setAnimation("arrow");
+    
+    var bow = createSprite(335,155,10,10);
+    bow.setAnimation("bow");
+    
+             
+    var balloon = createSprite (60, 50, 20, 20);
+    balloon.setAnimation("red");
+    
+    var balloon2 = createSprite (60, 150, 20, 20);
+    balloon2.setAnimation("red");
+    
+    var balloon3 = createSprite (60, 250, 20, 20);
+    balloon3.setAnimation("red");
+    
+    var balloon4 = createSprite (60, 350, 20, 20);
+    balloon4.setAnimation("red"); 
+    
+    var balloon5 = createSprite (125,100, 20, 20);
+    balloon5.setAnimation("green"); 
+    
+    
+    var balloon6 = createSprite(125,200,10,10);
+    balloon6.setAnimation("green");
+    
+    var balloon7 = createSprite(125,300,10,10);
+    balloon7.setAnimation("green");
+    
+    var balloon8 = createSprite(180,145,10,10);
+    balloon8.setAnimation("yellow");
+    
+    var balloon9 = createSprite (180,246, 20, 20);
+    balloon9.setAnimation("yellow"); 
+    
+    var balloon10 = createSprite (220,188, 20, 20);
+    balloon10.setAnimation("blue"); 
+
+function draw() {
+ 
+      background("white");
+      createEdgeSprites();
+      bow.y= World.mouseY;
+      arrow.y=bow.y;
+      
+      if (scene.x<0){
+         scene.x=scene.width/2;
+        }
+      
+      if (keyDown("space")){
+         serve();
+         reset();
+         playSound("sound://category_slide/animation_whoosh10.mp3");
+       }
+      
+      
+     
+      if (arrow.isTouching(balloon)){
+         balloon.destroy();
+         arrow.y=bow.y;
+        }  
+      
+       if (arrow.isTouching(balloon2)){
+           balloon2.destroy();
+           arrow.y=bow.y;
+        }  
+      
+       if (arrow.isTouching(balloon3)){
+           balloon3.destroy();
+           arrow.y=bow.y;
+        }  
+     
+      
+       if (arrow.isTouching(balloon4)){
+           balloon4.destroy();
+           arrow.y=bow.y;
+        }  
+      
+      if (arrow.isTouching(balloon5)){
+           balloon5.destroy();
+           arrow.y=bow.y;
+         }
+         
+      if (arrow.isTouching(balloon6)){
+           balloon6.destroy();
+           arrow.y=bow.y;
+        }  
+      
+      if (arrow.isTouching(balloon7)){
+         balloon7.destroy();
+         arrow.y=bow.y;
+         }   
+      
+      if (arrow.isTouching(balloon8)){
+         balloon8.destroy();
+         arrow.y=bow.y;
+         }
+         
+         
+      if (arrow.isTouching(balloon9)){
+         balloon9.destroy();
+         arrow.y=bow.y;
+         }
+         
+         
+      if (arrow.isTouching(balloon10)){
+         balloon10.destroy();
+         arrow.y=bow.y;
+         }
+      
+      drawSprites();
+      
+}
+
+function reset(){
+   arrow.x=bow.x;
+   arrow.y=bow.y;
+}
+
+function serve() {
+   arrow.velocityX =-33;
+}
+
+
+
+       
